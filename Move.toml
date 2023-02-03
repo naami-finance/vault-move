@@ -1,0 +1,9 @@
+[package]
+name = "suinet"
+version = "0.0.1"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet-0.24.0" }
+
+[addresses]
+naami =  "0x0"
