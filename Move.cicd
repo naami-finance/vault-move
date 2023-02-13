@@ -4,7 +4,7 @@ version = "0.0.1"
 
 [dependencies]
 Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet-0.25.0" }
-Shares = { local = "shares", addr_subst = { "shares" = "0xba9f35cba8104946dea79b52dacac0cac8c7d3be" } }
+Shares = { local = "shares", addr_subst = { "shares" = "0x3bfe5cdd7be672bdfa5fe92c95374ceda3533f79 " } }
 
 [addresses]
 vault =  "0x0"
