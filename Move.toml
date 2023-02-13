@@ -7,4 +7,4 @@ Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-fram
 Shares = { local = "../shares", addr_subst = { "shares" = "0xba9f35cba8104946dea79b52dacac0cac8c7d3be" } }
 
 [addresses]
-vault =  "0x0"
+vault =  "_"

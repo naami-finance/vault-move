@@ -2,11 +2,11 @@ name: Build Vault Package
 
 on:
   workflow_dispatch:
-    inputs:
-      sharesAddress:
-        description: 'Shares Package Address'
-        required: true
-        type: string
+#    inputs:
+#      sharesAddress:
+#        description: 'Shares Package Address'
+#        required: true
+#        type: string
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
         run: rm vault/Move.toml
       - name: replace cicd TOML
         run: mv vault/Move.cicd vault/Move.toml
-      - name: set shares package address
-        run: sed -i -e 's/\[shares_addr\]/${{ inputs.sharesAddress }}/g' vault/Move.toml
+#      - name: set shares package address
+#        run: sed -i -e 's/\[shares_addr\]/${{ inputs.sharesAddress }}/g' vault/Move.toml
       - name: build move
         run: docker run -e MNEMONIC="${{ secrets.DEPLOYER_MNEMONIC_PHRASE }}" -e ALGORITHM=${{ vars.DEPLOYER_ALGORITHM }} -e ADDRESS=${{ vars.DEPLOYER_ADDRESS }} -v ${GITHUB_WORKSPACE}/vault:/sui --rm naamitest/sui-publish:latest
