@@ -19,6 +19,7 @@ jobs:
         with:
           repository: 'naami-finance/share-move'
           path: 'shares'
+          ref: 'master'
       - name: delete normal TOML
         run: rm Move.toml
       - name: replace cicd TOML
