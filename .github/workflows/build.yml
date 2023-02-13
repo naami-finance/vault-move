@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          path: 'vault'
       - uses: actions/checkout@v3
         with:
           repository: 'naami-finance/share-move'
-          path: '../shares'
+          path: 'shares'
       - name: delete normal TOML
         run: rm Move.toml
       - name: replace cicd TOML
@@ -24,4 +26,4 @@ jobs:
       - name: set shares package address
         run: sed -i -e 's/\[shares_addr\]/${{ inputs.sharesAddress }}/g' Move.toml
       - name: build move
-        run: docker run -e MNEMONIC="${{ secrets.DEPLOYER_MNEMONIC_PHRASE }}" -e ALGORITHM=${{ vars.DEPLOYER_ALGORITHM }} -e ADDRESS=${{ vars.DEPLOYER_ADDRESS }} -v ${GITHUB_WORKSPACE}:/sui --rm naamitest/sui-publish:latest
+        run: docker run -e MNEMONIC="${{ secrets.DEPLOYER_MNEMONIC_PHRASE }}" -e ALGORITHM=${{ vars.DEPLOYER_ALGORITHM }} -e ADDRESS=${{ vars.DEPLOYER_ADDRESS }} -v ${GITHUB_WORKSPACE}/vault:/sui --rm naamitest/sui-publish:latest
