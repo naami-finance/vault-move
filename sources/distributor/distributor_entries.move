@@ -1,11 +1,11 @@
-module naami::distributor_entries {
+module vault::distributor_entries {
     use sui::coin::Coin;
     use sui::tx_context::TxContext;
     use sui::transfer;
-    use naami::distributor;
-    use naami::distributor::Distribution;
-    use naami::bucket::ShareBucket;
-    use naami::registry::ShareRegistry;
+    use vault::distributor;
+    use vault::distributor::Distribution;
+    use shares::bucket::ShareBucket;
+    use shares::registry::ShareRegistry;
     use sui::tx_context;
 
     public entry fun distribute<TCoin, TShare>(coin: Coin<TCoin>, ctx: &mut TxContext) {
@@ -24,6 +24,7 @@ module naami::distributor_entries {
         );
     }
 
+    // TODO: this needs some rethinking
     public entry fun redistribute_decayed<TCoin, TShare>(
         distribution: Distribution<TCoin, TShare>,
         ctx: &mut TxContext

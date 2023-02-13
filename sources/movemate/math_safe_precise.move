@@ -5,8 +5,8 @@
 /// Specifically:
 /// 1) `mul_div` calculates `a * b / c` but converts to `u128`s during calculations to avoid overflow.
 /// 2) `quadratic` is the same as `math::quadratic` but uses `2**32` as a scalar instead of `2**16` for more precise math (converting to `u128`s during calculations for safety).
-module naami::math_safe_precise {
-    use naami::math_u128;
+module vault::math_safe_precise {
+    use vault::math_u128;
 
     const SCALAR: u64 = 1 << 32;
     const SCALAR_U128: u128 = 1 << 32;

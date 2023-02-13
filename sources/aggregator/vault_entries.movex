@@ -1,5 +1,5 @@
-module naami::vault_entries {
-    use naami::vault::{Vault, Self};
+module vault::vault_entries {
+    use vault::vault::{Vault, Self};
 
     use sui::tx_context::TxContext;
     use sui::coin::Coin;

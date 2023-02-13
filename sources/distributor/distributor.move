@@ -1,4 +1,4 @@
-module naami::distributor {
+module vault::distributor {
     use sui::coin::Coin;
     use sui::balance::Balance;
     use sui::object::UID;
@@ -9,12 +9,12 @@ module naami::distributor {
     use sui::balance;
     use sui::dynamic_field;
 
-    use naami::distributor_events;
-    use naami::math_safe_precise;
-    use naami::registry;
-    use naami::bucket;
-    use naami::bucket::ShareBucket;
-    use naami::registry::ShareRegistry;
+    use vault::distributor_events;
+    use vault::math_safe_precise;
+    use shares::registry;
+    use shares::bucket;
+    use shares::bucket::ShareBucket;
+    use shares::registry::ShareRegistry;
 
     const DecayPeriodInEpoch: u64 = 1;
 

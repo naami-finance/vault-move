@@ -1,8 +1,8 @@
-module naami::distributor_events {
+module vault::distributor_events {
     use sui::event;
     use sui::object::ID;
 
-    friend naami::distributor;
+    friend vault::distributor;
 
     struct DistributionCreated<phantom TCoin, phantom TShare> has copy, drop {
         amount: u64,

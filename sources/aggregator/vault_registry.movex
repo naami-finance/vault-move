@@ -1,6 +1,6 @@
-module naami::vault_registry {
+module vault::vault_registry {
     use sui::object::UID;
-    use naami::vault::{Self};
+    use vault::vault::{Self};
     use sui::tx_context::TxContext;
     use std::ascii;
     use std::type_name;

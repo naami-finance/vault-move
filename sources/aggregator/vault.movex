@@ -1,4 +1,4 @@
-module naami::vault {
+module vault::vault {
     use sui::object::UID;
     use sui::coin::Coin;
     use sui::balance::Balance;
@@ -7,10 +7,10 @@ module naami::vault {
     use sui::tx_context::{TxContext};
     use sui::object;
 
-    use naami::vault_events;
-    use naami::distributor::{Distribution, Self};
+    use vault::vault_events;
+    use vault::distributor::{Distribution, Self};
 
-    friend naami::vault_registry;
+    friend vault::vault_registry;
 
     struct Vault<phantom TCoin, phantom TShare> has key, store {
         id: UID,

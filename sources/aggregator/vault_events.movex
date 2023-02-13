@@ -1,8 +1,8 @@
-module naami::vault_events {
+module vault::vault_events {
     use sui::object::ID;
     use sui::event;
 
-    friend naami::vault;
+    friend vault::vault;
 
     struct VaultCreated<phantom TCoin, phantom TShare> has copy, drop {
         id: ID
