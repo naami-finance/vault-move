@@ -20,6 +20,7 @@ jobs:
           repository: 'naami-finance/share-move'
           path: 'shares'
           ref: 'master'
+          ssh-key: ${{ secrets.SECRET_KEY }}
       - name: delete normal TOML
         run: rm Move.toml
       - name: replace cicd TOML
