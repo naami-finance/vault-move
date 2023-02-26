@@ -3,8 +3,8 @@ name = "Vault"
 version = "0.0.1"
 
 [dependencies]
-Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet-0.25.0" }
-Shares = { local = "../shares", addr_subst = { "shares" = "0x3bfe5cdd7be672bdfa5fe92c95374ceda3533f79" } }
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet-0.27.0" }
+Shares = { local = "../shares", addr_subst = { "shares" = "0x8406b3a1eb40e47eb06179f05fa31d356b823450" } }
 
 [addresses]
 vault =  "_"
